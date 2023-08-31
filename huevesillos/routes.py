@@ -16,5 +16,6 @@ async def upload_huevos(file:UploadFile =File(...)):
         huevesillor.close()
         l = img(ruta + file.filename)    
     return l.trar()
+#Se termina el tratamiento de imagenes y se guardan
    
    
