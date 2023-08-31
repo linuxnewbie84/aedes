@@ -1,4 +1,4 @@
-#Visión Computaciona Aedes Aegypti
+#Uso de Visión Computacional para conteo de Huevesillos de Aedes Aegypti
 
 Tiene como objetivo el conteo y busquedad de huevesillos del dengue en ovitrampas
 
