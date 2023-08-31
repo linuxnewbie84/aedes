@@ -26,7 +26,7 @@ class img:
         
         #*Bordes
         
-        borde = cv2.Canny(gaus, 25, 70)
+        borde = cv2.Canny(gaus, 50, 125)
         
         #cv2.imshow("Bordes", borde)
         (contornos,_) = cv2.findContours(borde.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -36,6 +36,8 @@ class img:
         print("He encontrado {} huevesillos de Aedes Aegypti".format(len(contornos)))
         
         cv2.drawContours(huevr,contornos,-1,(0,0,255), 2)
+        hallazgos = "Huevesillos Encontrados: " + str(len(contornos))
+        cv2.putText(huevr, hallazgos, (10,20),cv2.FONT_HERSHEY_SIMPLEX,0.7, (255,0,0),1)
         nom = f"{uuid4()}.jpg"
         cv2.imwrite(ruta+nom, huevr)
         return HTMLResponse("""<h1>La imagen ha sido procesada y guardada con el nombre: {},</h1> 
