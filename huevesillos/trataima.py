@@ -1,8 +1,11 @@
+import numpy as np
 import cv2
 from uuid import uuid4
+from matplotlib import pyplot as 
 from fastapi.responses import HTMLResponse
 
 ruta = 'huevesillos/resultados/'
+ruta2 = 'huevesillos/resultadosw/'
 class img:
     def __init__(self, f):
         self.f = f
@@ -45,4 +48,11 @@ class img:
         #cv2.imshow("contornos", huevr)
         #cv2.waitKey(100)
         #cv2.destroyAllWindows()
+class imgw :
+    def __init__(self, f:str):
+        self.f = f
+    
+    def wather(self):
+        huevos = cv2.imread(self.f) #*lectura
+        escalas = cv2.Color(huevos, cv2.COLOR_HSV2BGR) #*Binaria
 
