@@ -70,7 +70,7 @@ class imgw :
         _, pplano = cv2.threshold(d_t,0.7*d_t.max(),255,0)
         pplano = np.uint8(pplano)
         
-        cv2.imshow("Primer", pplano)
+        #cv2.imshow("Primer", pplano)
         
         #*substraemos los contornos que no estamos seguros estén en primer plano
         nose=cv2.subtract(b,pplano)
@@ -84,8 +84,6 @@ class imgw :
         #*Aplicamos en algoritmo Watershed a nuestra imagen original
         marcadores = cv2.watershed(huevos,marcadores)
         huevos[marcadores==-1]= [0,0,255]
-        cv2.imshow("Marcadores", huevos)
-        cv2.waitKey(0)
         #nom = f"{uuid4()}.jpg"
         
         
