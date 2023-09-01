@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File
 from fastapi.responses import HTMLResponse
 from uuid import uuid4
-from trataima import img
+from trataima import img, imgw
 
 
 ruta = "huevesillos/imagenesr/"
@@ -14,7 +14,9 @@ async def upload_huevos(file:UploadFile =File(...)):
     with open(f"{ruta}{file.filename}", "wb") as huevesillor:
         huevesillor.write(recibido)
         huevesillor.close()
-        l = img(ruta + file.filename)    
+        l = img(ruta + file.filename)
+        l2 = imgw(ruta+ file.filename)  
+        l2.wather()  
     return l.trar()
 #Se termina el tratamiento de imagenes y se guardan
    
