@@ -84,6 +84,7 @@ class imgw :
         #*Aplicamos en algoritmo Watershed a nuestra imagen original
         marcadores = cv2.watershed(huevos,marcadores)
         huevos[marcadores==-1]= [0,0,255]
+        cv2.imshow("Huebos",huevos)
         #nom = f"{uuid4()}.jpg"
         
         
